@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function CreateUser()
 {
-    const app_name = 'group9-meetingscheduler'
+    const app_name = 'group9-meetingscheduler';
     function buildPath(route)
     {
         if (process.env.NODE_ENV === 'production') 
@@ -19,13 +19,14 @@ function CreateUser()
     var password;
     var fname;
     var lname;
+    var email;
     const [message,setMessage] = useState('');
 
     const createUser = async event => 
     {
         event.preventDefault();
         
-        var obj = {login:username.value,password:password.value,fname:fname.value,lname:lname.value}
+        var obj = {username:username.value, password:password.value, fname:fname.value, lname:lname.value, email:email.value}
         var js = JSON.stringify(obj);
 
         try
@@ -56,6 +57,7 @@ function CreateUser()
             <span id ="inner-title">Create a User</span><br />
             <input type="text" id="fname" placeholder="First Name" ref={(c) => fname = c} /><br />
             <input type="text" id="lname" placeholder="Last Name" ref={(c) => lname = c} /><br />
+            <input type="text" id="email" placeholder="Email" ref={(c) => email = c} /><br />
             <input type="text" id="username" placeholder="Username To Add" ref={(c) => username = c} /><br />
             <input type="password" id="password" placeholder="Password" ref={(c) => password = c} /><br />
             <button type="button" id="createUserButton" class="buttons" onClick={createUser}> Create User </button><br />

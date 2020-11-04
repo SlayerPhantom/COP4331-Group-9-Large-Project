@@ -20,6 +20,7 @@ app.set('port', PORT);
 
 const MongoClient = require('mongodb').MongoClient;
 
+// has connection string for db
 require('dotenv').config();
 const url = process.env.MONGODB_URI;
 
@@ -28,11 +29,11 @@ client.connect();
 
 app.post('/api/createUser', async (req, res, next) =>
 {
-    // incoming: login, password
+    // incoming: Username, Password, FirstName, LastName, Email
     // outgoing: error
 
-    const { login, password, fname, lname } = req.body;
-    const newUser = { Login:login, Password:password, FirstName:fname, LastName:lname };
+    const { username, password, fname, lname, email } = req.body;
+    const newUser = { Username:username, Password:password, FirstName:fname, LastName:lname, Email:email };
     var error = '';
 
     try
@@ -55,9 +56,9 @@ app.post('/api/login', async (req, res, next) =>
     // outgoing: id, firstName, lastName, error
 
     var error = '';
-    const { login, password } = req.body;
+    const { username, password } = req.body;
     const db = client.db();
-    const results = await db.collection('Users').find({Login:login, Password:password}).toArray();
+    const results = await db.collection('Users').find({Username:username, Password:password}).toArray();
 
     var id = -1;
     var fn = '';
