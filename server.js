@@ -32,6 +32,7 @@ app.post('/api/createUser', async (req, res, next) =>
     // incoming: Username, Password, FirstName, LastName, Email
     // outgoing: error
 
+    // TODO: add email verification
     const { username, password, fname, lname, email } = req.body;
     const newUser = { Username:username, Password:password, FirstName:fname, LastName:lname, Email:email };
     var error = '';
