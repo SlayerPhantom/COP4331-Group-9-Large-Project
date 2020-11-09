@@ -55,7 +55,7 @@ function CreateUser()
     return(
         <div id="accessUIDiv">
             <br />
-            <span id ="inner-title">Create a User</span><br />
+            <span id ="inner-title">Create Account</span><br />
             <input type="text" id="fname" placeholder="First Name" ref={(c) => fname = c} /><br />
             <input type="text" id="lname" placeholder="Last Name" ref={(c) => lname = c} /><br />
             <input type="text" id="email" placeholder="Email" ref={(c) => email = c} /><br />
