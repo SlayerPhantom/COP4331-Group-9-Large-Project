@@ -56,7 +56,7 @@ function CreateUser()
     //new
     let transporter = nodemailer.createTransport
     ({
-        service: 'gmail'
+        service: 'gmail',
         auth:
         {
             user: 'group9scheduler@gmail.com',
