@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 
 function Login()
 {
+    console.log("Hello, I am logged in. It's working. Can you see me?");
+    
     const app_name = 'group9-meetingscheduler'
     function buildPath(route)
     {
