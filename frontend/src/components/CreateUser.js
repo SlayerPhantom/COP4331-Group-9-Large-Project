@@ -60,7 +60,6 @@ function CreateUser()
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
-        service: 'Gmail',
         auth:
         {
             user: 'group9scheduler@gmail.com',
@@ -76,9 +75,9 @@ function CreateUser()
             text: 'TEST'
         };
     
-        transporter.sendMail( mail, function( err, data )
+        transporter.sendMail( mail, ( error, response ) =>
         {
-            if( err )
+            if( error )
             {
                 console.log('An error has occured');
             }
