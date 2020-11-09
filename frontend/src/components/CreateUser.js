@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react';
-//new 
+//new  
 const nodemailer = require('nodemailer');
 
 function CreateUser()
