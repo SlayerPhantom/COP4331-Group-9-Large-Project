@@ -1,9 +1,12 @@
 import React from 'react';
+import '../App.js';
 
 function PageTitle()
 {   
     return(
-        <h1 id="title">Group 9 MERN Stack Scheduler</h1>
+        <div class="header">
+            <h1 id="title">Meeting Scheduler</h1>
+        </div>
     );
 };
 
