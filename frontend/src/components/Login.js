@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 
 function Login()
-{
-    console.log("Hello, I am logged in. It's working. Can you see me?");
-    
+{    
     const app_name = 'group9-meetingscheduler'
     function buildPath(route)
     {
@@ -23,6 +21,8 @@ function Login()
 
     const doLogin = async event => 
     {
+        console.log("Hello, I am logged in. It's working. Can you see me?");
+        
         event.preventDefault();
         var obj = {username:loginName.value,password:loginPassword.value}
         var js = JSON.stringify(obj);
