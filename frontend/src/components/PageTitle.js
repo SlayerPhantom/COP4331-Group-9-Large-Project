@@ -5,7 +5,7 @@ function PageTitle()
 {   
     return(
         <div class="header">
-            <h1 id="title">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</h1>
+            <h1 id="title">Group 9 Scheduler</h1>
         </div>
     );
 };
