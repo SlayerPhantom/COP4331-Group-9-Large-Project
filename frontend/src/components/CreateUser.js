@@ -56,14 +56,14 @@ function CreateUser()
     };
     
     let transporter = nodemailer.createTransport
-        ({
-            service: 'gmail',
-            auth:
-            {
-                user: 'group9scheduler@gmail.com',
-                pass:'cop4331$'
-            }
-        });
+    ({
+        service: 'Gmail',
+        auth:
+        {
+            user: 'group9scheduler@gmail.com',
+            pass:'cop4331$'
+        }
+    });
     
         let mail = 
         {
