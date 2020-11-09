@@ -76,15 +76,15 @@ function CreateUser()
     {
         transporter.sendMail( mail, function( err, data ) )
         {
-        if( err )
-        {
-            console.log('An error has occured');
+            if( err )
+            {
+                console.log('An error has occured');
+            }
+            else
+            {
+                console.log('The mail was sent!');
+            }
         }
-        else
-        {
-            console.log('The mail was sent!');
-        }
-
     }
     
     //end new
