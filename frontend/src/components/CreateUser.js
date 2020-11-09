@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+//new
+const nodemailer = require('nodemailer');
 
 function CreateUser()
 {
@@ -51,7 +53,42 @@ function CreateUser()
             setMessage(e.toString());
         }
     };
+    //new
+    let transporter = nodemailer.createTransport
+    ({
+        service: 'gmail'
+        auth:
+        {
+            user: 'group9scheduler@gmail.com',
+            pass:'cop4331$'
+        }
+    });
+    
+    let mail = 
+    {
+        from: 'group9scheduler@gmail.com',
+        to: 'loganrod16@gmail.com',
+        subject: 'Email Verification',
+        text: 'TEST'
+    };
+    
+    function doVerify()
+    {
+        transporter.sendMail( mail, function( err, data ) )
+        {
+        if( err )
+        {
+            console.log('An error has occured');
+        }
+        else
+        {
+            console.log('The mail was sent!');
+        }
 
+    }
+    
+    //end new
+    //changed onClick; added onclick{doVerify}
     return(
         <div id="accessUIDiv">
             <br />
@@ -62,7 +99,7 @@ function CreateUser()
             <input type="text" id="username" placeholder="Username To Add" ref={(c) => username = c} /><br />
             <input type="password" id="password" placeholder="Password" ref={(c) => password = c} /><br />
             <input type="password" id="confirmPassword" placeholder="Confirm Password" ref={(c) => confirmPassword = c} /><br />
-            <button type="button" id="createUserButton" class="buttons" onClick={createUser}> Create User </button><br />
+            <button type="button" id="createUserButton" class="buttons" onClick={createUser} onClick={doVerify}> Create User </button><br />
             <span id="userAddResult">{message}</span>
         </div>
     );
