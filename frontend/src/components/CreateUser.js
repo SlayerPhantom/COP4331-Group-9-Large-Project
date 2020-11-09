@@ -74,7 +74,7 @@ function CreateUser()
     
     function doVerify()
     {
-        transporter.sendMail( mail, function( err, data ) )
+        transporter.sendMail( mail, function( err, data )
         {
             if( err )
             {
@@ -85,7 +85,7 @@ function CreateUser()
                 console.log('The mail was sent!');
             }
         }
-    }
+    });
     
     //end new
     //changed onClick; added onclick{doVerify}
