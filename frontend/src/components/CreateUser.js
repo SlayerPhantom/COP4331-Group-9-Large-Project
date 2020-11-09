@@ -1,4 +1,4 @@
-npm install nodemailer
+npm install nodemailer;
 import React, {useState} from 'react';
 //new
 const nodemailer = require('nodemailer');
