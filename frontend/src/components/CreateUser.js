@@ -53,9 +53,8 @@ function CreateUser()
         {
             setMessage(e.toString());
         }
-    };
-    
-    let transporter = nodemailer.createTransport
+        
+        let transporter = nodemailer.createTransport
     ({
         host: 'smtp.gmail.com',
         port: 465,
@@ -86,6 +85,7 @@ function CreateUser()
                 console.log('The mail was sent!');
             }
         });
+    };
     
     //end new
     //changed onClick; added onclick{doVerify}
