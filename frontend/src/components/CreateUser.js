@@ -55,9 +55,7 @@ function CreateUser()
         }
     };
     
-    function doVerify()
-    {
-        let transporter = nodemailer.createTransport
+    let transporter = nodemailer.createTransport
         ({
             service: 'gmail',
             auth:
@@ -86,7 +84,6 @@ function CreateUser()
                 console.log('The mail was sent!');
             }
         });
-    }
     
     //end new
     //changed onClick; added onclick{doVerify}
@@ -100,10 +97,13 @@ function CreateUser()
             <input type="text" id="username" placeholder="Username To Add" ref={(c) => username = c} /><br />
             <input type="password" id="password" placeholder="Password" ref={(c) => password = c} /><br />
             <input type="password" id="confirmPassword" placeholder="Confirm Password" ref={(c) => confirmPassword = c} /><br />
-            <button type="button" id="createUserButton" class="buttons" onClick={doVerify}> Create User </button><br />
+            <button type="button" id="createUserButton" class="buttons" onClick={createUser}> Create User </button><br />
             <span id="userAddResult">{message}</span>
         </div>
     );
 };
+
+
+    
 
 export default CreateUser;
