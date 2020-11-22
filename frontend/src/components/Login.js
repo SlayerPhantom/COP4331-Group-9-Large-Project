@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 function Login()
 {    
-    const app_name = 'group9-meetingscheduler'
+    const app_name = 'schedule9'
     function buildPath(route)
     {
         if (process.env.NODE_ENV === 'production') 
